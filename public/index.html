@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawsarous</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="container">
+      <div>
+        <h1 class="title">Drawsarous</h1>
+      </div>
+      <p>Draw. Guess. Roar!</p>
+      <div class="mascot">
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your Name"
+          required
+        />
+        <img src="/assets/mascot.png" alt="" class="dino" />
+        <button class="main-btn btn">Play</button>
+      </div>
+      <div class="buttons">
+        <button class="create-btn btn">Create Room</button>
+        <button class="join-btn btn">Join Room</button>
+      </div>
+    </div>
+
+    <div id="joinPopup" class="popup">
+      <div class="popup-content">
+        <h3>Join a Room</h3>
+        <input type="text" id="joinRoomId" placeholder="Enter Room ID" />
+        <div class="popup-buttons">
+          <button id="confirmJoinBtn">Join</button>
+          <button id="closePopupBtn">Cancel</button>
+        </div>
+      </div>
+      <div class="errMsg"></div>
+    </div>
+  </body>
+</html>

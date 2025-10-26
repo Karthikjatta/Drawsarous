@@ -1,0 +1,202 @@
+:root {
+  --bg-dark: hsl(228 79% 2%);
+  --bg: hsl(222 55% 5%);
+  --bg-light: hsl(220 35% 10%);
+  --text: hsl(220 100% 98%);
+  --text-muted: hsl(220 35% 73%);
+  --highlight: hsl(220 20% 42%);
+  --border: hsl(220 26% 31%);
+  --border-muted: hsl(220 37% 20%);
+  --primary: hsl(137, 86%, 62%);
+  --secondary: hsl(50, 67%, 72%);
+  --danger: hsl(9 26% 64%);
+  --warning: hsl(52 19% 57%);
+  --success: hsl(146 17% 59%);
+  --info: hsl(217 28% 65%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  padding: 10px;
+  max-width: 1050px;
+}
+
+section {
+  background: var(--bg);
+  border-radius: 7px;
+  box-shadow: 0 0 20px var(--border-muted);
+}
+
+.tools-board {
+  width: 210px;
+  padding: 15px 22px 0;
+}
+
+.tools-board .row {
+  margin-bottom: 20px;
+}
+
+.row .options {
+  list-style: none;
+  margin: 10px 0 0 5px;
+}
+
+.row .options .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.option :where(span, label) {
+  color: var(--text-muted);
+  padding-left: 10px;
+}
+
+.option:is(:hover, .active) img {
+  scale: 110%;
+  filter: brightness(0) saturate(100%) invert(74%) sepia(50%) saturate(463%)
+    hue-rotate(92deg) brightness(95%) contrast(89%);
+}
+
+.option:is(:hover, .active) :where(span, label) {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+#fill-color:checked ~ label {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+#fill-color {
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+#size-slider {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  accent-color: var(--primary);
+}
+
+.colors .options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colors .option {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+.colors .option:nth-child(1) {
+  background-color: var(--secondary);
+}
+.colors .option:nth-child(2) {
+  background-color: var(--text);
+}
+.colors .option:nth-child(3) {
+  background-color: var(--danger);
+}
+.colors .option:nth-child(4) {
+  background-color: var(--success);
+}
+.colors .option:nth-child(5) {
+  background-color: var(--info);
+}
+
+.colors .option.selected::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  border-radius: inherit;
+  background-color: inherit;
+  border: 2px solid var(--bg);
+  transform: translate(-50%, -50%);
+}
+
+.buttons button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 11px 0;
+  margin-bottom: 13px;
+  background: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.buttons .clear-canvas {
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.clear-canvas:hover {
+  color: var(--text);
+  background-color: var(--highlight);
+}
+
+.buttons .save-image {
+  background-color: var(--primary);
+  border: 1px solid var(--border);
+  color: var(--bg-dark);
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.save-image:hover {
+  background-color: var(--success);
+}
+
+#color-picker {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.draw-board {
+  flex: 1;
+}
+
+.draw-board canvas {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-light);
+  border-radius: 7px;
+  border: 1px solid var(--border-muted);
+}
+
+/* .draw-board {
+  background-color: #fff;
+} */

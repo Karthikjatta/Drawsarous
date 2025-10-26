@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paint</title>
+    <link rel="stylesheet" href="paint.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+    <script src="paint.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="tools-board">
+        <div class="row">
+          <label for="" class="title">Shapes</label>
+          <ul class="options">
+            <li class="option tool" id="rectangle">
+              <img src="./icons/rectangle.svg" alt="" />
+              <span>Rectangle</span>
+            </li>
+            <li class="option tool" id="circle">
+              <img src="./icons/circle.svg" alt="" />
+              <span>Circle</span>
+            </li>
+            <li class="option tool" id="triangle">
+              <img src="./icons/triangle.svg" alt="" />
+              <span>Triangle</span>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <label for="" class="title">Options</label>
+          <ul class="options">
+            <li class="option active tool" id="brush">
+              <img src="./icons/brush.svg" alt="" />
+              <span>Brush</span>
+            </li>
+            <li class="option tool" id="eraser">
+              <img src="./icons/eraser.svg" alt="" />
+              <span>Eraser</span>
+            </li>
+            <li class="option">
+              <input type="range" id="size-slider" min="1" max="30" value="5" />
+            </li>
+            <li class="option">
+              <input type="checkbox" name="fill-color" id="fill-color" />
+              <label for="fill-color">Fill-Color</label>
+            </li>
+          </ul>
+        </div>
+        <div class="row colors">
+          <label for="" class="title">Colors</label>
+          <ul class="options">
+            <li class="option"></li>
+            <li class="option selected"></li>
+            <li class="option"></li>
+            <li class="option"></li>
+            <li class="option">
+              <input type="color" id="color-picker" value="#4a98f7" />
+            </li>
+          </ul>
+        </div>
+        <div class="row buttons">
+          <button class="clear-canvas">Clear Canvas</button>
+          <button class="save-image">Save As Image</button>
+        </div>
+      </section>
+      <section class="draw-board">
+        <canvas></canvas>
+      </section>
+    </div>
+  </body>
+</html>
